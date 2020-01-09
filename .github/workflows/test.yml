@@ -1,0 +1,20 @@
+name: Test
+on:
+  push:
+    branches:
+      - master
+  milestone:
+    types: [closed]
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the sources
+        uses: actions/checkout@v1
+      - name: Create a release draft for a milestone
+        id: create-release-draft
+        uses: ./
+      - name: Print the URL of the release draft
+        if: steps.create-release-draft.outputs.release-url != ''
+        run: echo ${{ steps.create-release-draft.outputs.release-url }}
