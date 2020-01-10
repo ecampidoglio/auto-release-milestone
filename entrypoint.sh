@@ -13,6 +13,8 @@ if [ $event_type != "closed" ]; then
   exit 0
 fi
 
+milestone_name=$(jq .milestone.title $GITHUB_EVENT_PATH)
+
 echo "::set-output name=release-url::https://example.com"
 
 exit 0
