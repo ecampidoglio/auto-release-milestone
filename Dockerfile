@@ -7,5 +7,7 @@ LABEL version="0.1.0"
 LABEL repository="https://github.com/ecampidoglio/auto-release-milestone"
 LABEL maintainer="Enrico Campidoglio"
 
+RUN apt-get update && apt-get install -y jq
+
 COPY entrypoint.sh /
 ENTRYPOINT [ "/entrypoint.sh" ]
