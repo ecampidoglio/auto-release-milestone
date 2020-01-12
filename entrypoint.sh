@@ -15,6 +15,11 @@ fi
 
 milestone_name=$(jq .milestone.title $GITHUB_EVENT_PATH)
 
+# Splits the string in $GITHUB_REPOSITORY which takes
+# the form "owner/repository" into two variables
+# called $owner and $repository
+IFS='/' read owner repository <<< "$GITHUB_REPOSITORY"
+
 echo "::set-output name=release-url::https://example.com"
 
 exit 0
