@@ -35,6 +35,6 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-echo "::set-output name=release-url::https://example.com"
+echo "::set-output name=release-url::$release_url"
 
 exit 0
