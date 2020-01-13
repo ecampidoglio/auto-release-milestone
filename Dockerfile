@@ -8,6 +8,7 @@ LABEL repository="https://github.com/ecampidoglio/auto-release-milestone"
 LABEL maintainer="Enrico Campidoglio"
 
 RUN apt-get update && apt-get install -y jq
+RUN dotnet tool install -g GitReleaseManager.Tool
 
 COPY entrypoint.sh /
 ENTRYPOINT [ "/entrypoint.sh" ]
