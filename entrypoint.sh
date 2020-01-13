@@ -1,6 +1,8 @@
 #!/bin/bash
 set -u
 
+repo_token=$1
+
 if [ "$GITHUB_EVENT_NAME" != "milestone" ]; then
   echo "::debug::The event name was '$GITHUB_EVENT_NAME'"
   exit 0
@@ -24,7 +26,7 @@ release_url=$(dotnet gitreleasemanager create \
 --milestone $milestone_name \
 --name $milestone_name \
 --targetcommitish $GITHUB_SHA \
---token $GITHUB_TOKEN \
+--token $repo_token \
 --owner $owner \
 --repository $repository)
 
