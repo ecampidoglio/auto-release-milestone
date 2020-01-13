@@ -10,5 +10,7 @@ LABEL maintainer="Enrico Campidoglio"
 RUN apt-get update && apt-get install -y jq
 RUN dotnet tool install -g GitReleaseManager.Tool
 
+ENV PATH /root/.dotnet/tools:$PATH
+
 COPY entrypoint.sh /
 ENTRYPOINT [ "/entrypoint.sh" ]
