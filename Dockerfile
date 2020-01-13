@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/runtime:3.1
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1
 
 LABEL "com.github.actions.name"="Auto Release Milestone"
 LABEL "com.github.actions.description"="Drafts a GitHub release based on a newly closed milestone."
