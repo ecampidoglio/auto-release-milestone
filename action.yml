@@ -13,3 +13,6 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.repo-token }}
+branding:
+  color: red
+  icon: flag
